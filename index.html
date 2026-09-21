@@ -1,428 +1,53 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Lili Doces Gourmet — confeitaria artesanal feita com carinho, doce e momentos felizes." />
-  <title>Lili Doces Gourmet | Feito com carinho, doce</title>
+  <meta name="description" content="Lili Doces — confeitaria artesanal feita com carinho, doce e momentos felizes." />
+  <title>Lili Doces | Feito com carinho, doce</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
-
-<style>
-  :root {
-    --pink: #d91b83;
-    --pink-deep: #e9aeb4;
-    --pink-light: #fff0f8;
-    --pink-card: #fffafa;
-    --ink: #100d10;
-    --muted: #685a60;
-    --white: #fff;
-    --green: #25d366;
-    --radius: 28px
-  }
-
-  * {
-    box-sizing: border-box
-  }
-
-  html {
-    scroll-behavior: smooth
-  }
-
-  body {
-    margin: 0;
-    color: var(--ink);
-    font-family: 'Baloo 2', sans-serif;
-    background: var(--pink-light);
-    line-height: 1.45
-  }
-
-  .announcement {
-    background: var(--ink);
-    color: var(--white);
-    text-align: center;
-    font-size: .9rem;
-    padding: 9px 16px;
-    letter-spacing: .3px;
-    font-weight: 700
-  }
-
-  .site-header {
-    max-width: 1180px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 28px;
-    position: relative;
-    z-index: 5;
-    background: var(--pink)
-  }
-
-  .brand {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: var(--ink)
-  }
-
-  .logo-image {
-    width: 100px;
-    height: 100px;
-    display: block;
-    object-fit: contain;
-    mix-blend-mode: multiply
-  }
-
-  .nav {
-    display: flex;
-    align-items: center;
-    gap: 28px
-  }
-
-  .nav a {
-    color: var(--ink);
-    text-decoration: none;
-    font-weight: 700
-  }
-
-  .nav a:hover {
-    opacity: .65
-  }
-
-  .nav-cta,
-  .button {
-    border-radius: 100px;
-    padding: 12px 22px;
-    text-decoration: none;
-    font-weight: 800
-  }
-
-  .nav-cta {
-    background: var(--ink);
-    color: #fff !important;
-    box-shadow: 0 7px 16px rgba(16, 13, 16, .16)
-  }
-
-  .menu-toggle {
-    display: none;
-    border: 0;
-    background: none;
-    font-size: 1.7rem;
-    color: var(--ink);
-    cursor: pointer
-  }
-
-  .hero {
-    max-width: 1180px;
-    margin: auto;
-    min-height: 570px;
-    padding: 65px 28px 75px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 35px;
-    overflow: hidden
-  }
-
-  .eyebrow {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--ink);
-    font-weight: 800;
-    font-size: .78rem;
-    margin: 0 0 12px
-  }
-
-  .hero h1 {
-    font-size: clamp(3rem, 6vw, 5.1rem);
-    line-height: .97;
-    margin: 0 0 24px;
-    font-weight: 800
-  }
-
-  .hero h1 em,
-  .section h2 em,
-  .about h2 em,
-  .order h2 em,
-  .menu-link-section h2 em {
-    font-family: Pacifico, cursive;
-    font-weight: 400;
-    color: var(--ink);
-    font-style: normal
-  }
-
-  .hero-text {
-    font-size: 1.15rem;
-    color: var(--muted);
-    max-width: 490px
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    margin: 30px 0
-  }
-
-  .button-primary,
-  .button-dark {
-    background: var(--ink);
-    color: #fff;
-    box-shadow: 0 8px 20px rgba(16, 13, 16, .18)
-  }
-
-  .button-primary:hover,
-  .button-dark:hover {
-    background: #383039;
-    transform: translateY(-2px)
-  }
-
-  .button span {
-    font-size: 1.2rem;
-    margin-left: 8px
-  }
-
-  .button-link {
-    color: var(--ink);
-    font-weight: 800
-  }
-
-  .mini-note {
-    font-weight: 700;
-    color: var(--muted)
-  }
-
-  .mini-note span {
-    color: var(--pink-deep);
-    font-size: 1.5rem
-  }
-
-  .hero-art {
-    height: 450px;
-    position: relative;
-    background: var(--pink);
-    border-radius: 50% 45% 52% 43%;
-    max-width: 530px;
-    width: 100%;
-    justify-self: end;
-    border: 1px solid rgba(16, 13, 16, .08)
-  }
-
-  .sun {
-    position: absolute;
-    width: 230px;
-    height: 230px;
-    background: rgba(255, 255, 255, .4);
-    border-radius: 50%;
-    top: 55px;
-    right: 100px
-  }
-
-  .cake {
-    position: absolute
-  }
-
-  .cake-main {
-    font-size: 7rem;
-    left: 145px;
-    top: 135px;
-    filter: drop-shadow(3px 8px 0 rgba(16, 13, 16, .1));
-    transform: rotate(-5deg)
-  }
-
-  .cake-top {
-    font-size: 4rem;
-    position: absolute;
-    top: -47px;
-    left: 35px
-  }
-
-  .icing {
-    position: absolute;
-    background: #fff9fa;
-    width: 190px;
-    height: 45px;
-    border-radius: 50%;
-    top: 28px;
-    left: 20px
-  }
-
-  .cake-lines {
-    position: absolute;
-    background: repeating-linear-gradient(0deg, transparent 0 15px, rgba(16, 13, 16, .16) 16px 18px);
-    width: 190px;
-    height: 100px;
-    left: 20px;
-    top: 55px;
-    border-radius: 10px
-  }
-
-  .cupcake {
-    position: absolute;
-    right: 60px;
-    bottom: 90px;
-    font-size: 5rem;
-    transform: rotate(12deg)
-  }
-
-  .cookie {
-    position: absolute;
-    left: 56px;
-    bottom: 72px;
-    background: #d99c74;
-    border: 8px dotted #805344;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    color: transparent
-  }
-
-  .confetti {
-    position: absolute;
-    right: 45px;
-    top: 68px;
-    color: var(--ink);
-    font-size: 2rem;
-    line-height: 2;
-    transform: rotate(25deg)
-  }
-
-  .sparkle {
-    position: absolute;
-    color: var(--ink);
-    font-size: 2.5rem
-  }
-
-  .sparkle-one {
-    left: 90px;
-    top: 95px
-  }
-
-  .sparkle-two {
-    right: 65px;
-    top: 190px
-  }
-
-  .ticker {
-    background: var(--ink);
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    gap: 28px;
-    align-items: center;
-    padding: 13px 15px;
-    font-weight: 700;
-    font-size: 1.1rem;
-    flex-wrap: wrap
-  }
-
-  .ticker i {
-    font-style: normal;
-    color: var(--pink);
-    font-size: 1.3rem
-  }
-
-  .section {
-    max-width: 1180px;
-    margin: auto;
-    padding: 100px 28px
-  }
-
-  .section-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    gap: 30px;
-    margin-bottom: 42px
-  }
-
-  .section-heading h2,
-  .about h2,
-  .order h2,
-  .menu-link-section h2 {
-    font-size: clamp(2.5rem, 4vw, 4rem);
-    line-height: 1;
-    margin: 0
-  }
-
-  .section-heading>p {
-    max-width: 350px;
-    color: var(--muted);
-    font-size: 1.08rem
-  }
-
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px
-  }
-
-  .product-card {
-    border-radius: var(--radius);
-    padding: 28px;
-    min-height: 350px;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(16, 13, 16, .1);
-    box-shadow: 0 10px 25px rgba(16, 13, 16, .06)
-  }
-
-  .pink-card,
-  .blue-card,
-  .yellow-card {
-    background: var(--pink-card)
-  }
-
-  .product-card:nth-child(2) {
-    background: #fff4f5
-  }
-
-  .product-card:nth-child(3) {
-    background: #fff8f8
-  }
-
-  .product-illustration {
-    height: 140px;
-    font-size: 7rem;
-    display: grid;
-    place-items: center
-  }
-
-  .product-card h3 {
-    font-size: 1.5rem;
-    margin: 10px 0 4px
-  }
-
-  .product-card p {
-    color: var(--muted);
-    margin: 0 0 12px
-  }
-
-  .product-card a {
-    font-weight: 800;
-    color: var(--ink);
-    text-decoration: none
-  }
-
+  <style>
+    :root{--pink:#d91b83;--pink-dark:#aa1263;--pink-light:#fff0f8;--blue:#42aaca;--blue-light:#e9f8fc;--yellow:#ffd33f;--ink:#332338;--muted:#755e72;--white:#fff;--radius:28px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:'Baloo 2',sans-serif;background:#fffdfb;line-height:1.45}.announcement{background:var(--pink);color:#fff;text-align:center;font-size:.9rem;padding:8px 16px;letter-spacing:.3px}.site-header{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:22px 28px;position:relative;z-index:5}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}.brand-mark{width:45px;height:45px;border-radius:50% 50% 46% 54%;display:grid;place-items:center;background:var(--yellow);color:var(--pink);font-family:Georgia;font-size:29px;transform:rotate(-12deg)}.brand-mark span{transform:rotate(12deg)}.brand-name{font-family:Pacifico,cursive;font-size:1.55rem;color:var(--pink)}.brand-name strong{font-family:'Baloo 2';font-weight:800;color:var(--blue);font-size:1.25rem}.nav{display:flex;align-items:center;gap:30px}.nav a{color:var(--ink);text-decoration:none;font-weight:600}.nav a:hover{color:var(--pink)}.nav-cta,.button{border-radius:100px;padding:12px 22px;text-decoration:none;font-weight:700}.nav-cta{background:var(--pink);color:#fff!important}.menu-toggle{display:none;border:0;background:none;font-size:1.6rem;color:var(--pink)}.hero{max-width:1180px;margin:auto;min-height:580px;padding:55px 28px 70px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:30px;overflow:hidden}.eyebrow{text-transform:uppercase;letter-spacing:2px;color:var(--pink);font-weight:800;font-size:.78rem;margin:0 0 12px}.hero h1{font-size:clamp(3rem,6vw,5.1rem);line-height:.97;margin:0 0 24px;font-weight:800}.hero h1 em,.section h2 em,.about h2 em,.order h2 em{font-family:Pacifico,cursive;font-weight:400;color:var(--pink);font-style:normal}.hero-text{font-size:1.15rem;color:var(--muted);max-width:490px}.hero-actions{display:flex;gap:15px;align-items:center;margin:30px 0}.button-primary{background:var(--pink);color:#fff;box-shadow:0 8px 20px #d91b8338}.button-primary:hover{background:var(--pink-dark);transform:translateY(-2px)}.button span{font-size:1.2rem;margin-left:8px}.button-link{color:var(--pink)}.mini-note{font-weight:600;color:var(--blue)}.mini-note span{color:var(--yellow);font-size:1.5rem}.hero-art{height:450px;position:relative;background:var(--pink-light);border-radius:50% 45% 52% 43%;max-width:530px;width:100%;justify-self:end}.sun{position:absolute;width:230px;height:230px;background:#ffd33f99;border-radius:50%;top:55px;right:100px}.cake{position:absolute}.cake-main{font-size:7rem;left:145px;top:135px;filter:drop-shadow(3px 8px 0 #d91b8320);transform:rotate(-5deg)}.cake-top{font-size:4rem;position:absolute;top:-47px;left:35px}.icing{position:absolute;background:#fff6fb;width:190px;height:45px;border-radius:50%;top:28px;left:20px}.cake-lines{position:absolute;background:repeating-linear-gradient(0deg,transparent 0 15px,#d91b8366 16px 18px);width:190px;height:100px;left:20px;top:55px;border-radius:10px}.cupcake{position:absolute;right:60px;bottom:90px;font-size:5rem;transform:rotate(12deg)}.cookie{position:absolute;left:56px;bottom:72px;background:#e7a269;border:8px dotted #a85e47;width:80px;height:80px;border-radius:50%;color:transparent}.confetti{position:absolute;right:45px;top:68px;color:var(--blue);font-size:2rem;line-height:2;transform:rotate(25deg)}.sparkle{position:absolute;color:var(--pink);font-size:2.5rem}.sparkle-one{left:90px;top:95px}.sparkle-two{right:65px;top:190px}.ticker{background:var(--blue);color:#fff;display:flex;justify-content:center;gap:28px;align-items:center;padding:13px 15px;font-weight:700;font-size:1.1rem;flex-wrap:wrap}.ticker i{font-style:normal;color:var(--yellow);font-size:1.3rem}.section{max-width:1180px;margin:auto;padding:100px 28px}.section-heading{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:42px}.section-heading h2,.about h2,.order h2{font-size:clamp(2.5rem,4vw,4rem);line-height:1;margin:0}.section-heading>p{max-width:350px;color:var(--muted);font-size:1.08rem}.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.product-card{border-radius:var(--radius);padding:28px;min-height:350px;position:relative;overflow:hidden}.pink-card{background:var(--pink-light)}.blue-card{background:var(--blue-light)}.yellow-card{background:#fff8da}.product-illustration{height:140px;font-size:7rem;display:grid;place-items:center}.product-card h3{font-size:1.5rem;margin:10px 0 4px}.product-card p{color:var(--muted);margin:0 0 12px}.product-card a{font-weight:800;color:var(--pink);text-decoration:none}.about{background:var(--pink-light);padding:85px max(28px,calc((100% - 1180px)/2));display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.about-art{height:380px;background:var(--yellow);border-radius:50% 42% 50% 45%;position:relative;overflow:hidden}.about-circle{position:absolute;width:220px;height:220px;background:#fff1f9;border-radius:50%;top:62px;left:100px}.about-cake{font-size:9rem;position:absolute;top:115px;left:132px;transform:rotate(-7deg)}.about-heart{position:absolute;right:75px;top:55px;color:var(--pink);font-size:4rem}.about-copy>p:not(.eyebrow){color:var(--muted);font-size:1.1rem}.about-copy .button{display:inline-block;margin-top:18px}.centered{display:block;text-align:center}.centered>p:last-child{margin:15px auto 0}.occasion-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:center}.occasion-grid>div{padding:26px 15px;border:2px dashed #f0b0d1;border-radius:22px}.occasion-grid span{font-size:2.4rem}.occasion-grid h3{margin:8px 0 3px;font-size:1.3rem}.occasion-grid p{margin:0;color:var(--muted)}.order{background:var(--blue);color:#fff;padding:85px max(28px,calc((100% - 1180px)/2));display:grid;grid-template-columns:1fr 1fr;gap:75px;align-items:start}.order .eyebrow{color:var(--yellow)}.order h2 em{color:#fff}.order-copy>p:not(.eyebrow){font-size:1.1rem;max-width:470px}.contact-links{display:flex;flex-direction:column;gap:5px;margin-top:25px}.contact-links a,.contact-links span{color:#fff;text-decoration:none;font-weight:600}.order-form{background:#fff;color:var(--ink);padding:28px;border-radius:var(--radius);display:grid;gap:14px;box-shadow:0 15px 40px #14668033}label{font-weight:700;display:grid;gap:5px}input,select,textarea{font:inherit;border:1px solid #e8dce5;border-radius:12px;padding:12px 14px;color:var(--ink);background:#fff}textarea{resize:vertical}.button-dark{border:0;background:var(--pink);color:#fff;cursor:pointer;font:inherit;font-weight:700}.form-message{margin:0;color:var(--pink);font-weight:700}footer{padding:35px 28px;text-align:center;background:var(--pink-light)}.footer-brand{justify-content:center}.copyright{color:var(--muted);font-size:.85rem;margin-bottom:0}@media(max-width:760px){.site-header{padding:18px 20px}.menu-toggle{display:block}.nav{display:none;position:absolute;top:76px;left:15px;right:15px;flex-direction:column;background:#fff;padding:22px;border-radius:20px;box-shadow:0 10px 30px #0002}.nav.open{display:flex}.hero{grid-template-columns:1fr;padding-top:35px}.hero-art{height:330px;justify-self:center}.cake-main{left:25%;top:90px}.cupcake{right:25px;bottom:55px}.cookie{left:30px;bottom:45px}.section-heading,.about,.order{display:block}.section-heading>p{margin-top:20px}.product-grid,.occasion-grid{grid-template-columns:1fr}.product-card{min-height:290px}.about-art{height:300px;margin-bottom:45px}.about-circle{left:25%}.about-cake{left:31%;top:85px;font-size:7rem}.order-form{margin-top:35px}.hero-actions{flex-wrap:wrap}.ticker{gap:10px;font-size:.9rem}}
   .menu-link-section {
     max-width: 1180px;
     margin: 0 auto;
-    padding: 0 28px 90px;
-    text-align: center
+    padding: 0 28px 88px;
+    text-align: center;
   }
 
   .menu-link-section .eyebrow {
-    margin: 0 0 12px
+    margin: 0 0 12px;
+    color: #d91b83;
+    font-family: 'Baloo 2', sans-serif;
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .menu-link-section h2 {
+    margin: 0;
+    color: #332338;
+    font-family: 'Baloo 2', sans-serif;
+    font-size: clamp(2.2rem, 4vw, 3.7rem);
+    line-height: 1;
+  }
+
+  .menu-link-section h2 em {
+    color: #d91b83;
+    font-family: 'Pacifico', cursive;
+    font-style: normal;
+    font-weight: 400;
   }
 
   .menu-link-section p:not(.eyebrow) {
     max-width: 520px;
     margin: 18px auto 25px;
-    color: var(--muted);
-    font-size: 1.08rem
+    color: #755e72;
+    font-size: 1.08rem;
   }
 
   .menu-link-button {
@@ -432,341 +57,68 @@
     padding: 14px 25px;
     border-radius: 999px;
     color: #fff;
-    background: var(--ink);
-    box-shadow: 0 8px 20px rgba(16, 13, 16, .2);
+    background: #d91b83;
+    box-shadow: 0 8px 20px rgba(217, 27, 131, .25);
+    font-family: 'Baloo 2', sans-serif;
     font-size: 1.05rem;
     font-weight: 800;
     text-decoration: none;
-    transition: transform .2s ease, background .2s ease, box-shadow .2s ease
+    transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
   }
 
   .menu-link-button span {
     font-size: 1.3rem;
-    line-height: 1
+    line-height: 1;
   }
 
   .menu-link-button:hover {
-    background: #383039;
-    box-shadow: 0 12px 25px rgba(16, 13, 16, .25);
-    transform: translateY(-3px)
+    background: #aa1263;
+    box-shadow: 0 12px 25px rgba(217, 27, 131, .32);
+    transform: translateY(-3px);
   }
 
-  .about {
-    background: var(--pink);
-    padding: 85px max(28px, calc((100% - 1180px)/2));
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 70px;
-    align-items: center
-  }
-
-  .about-art {
-    height: 380px;
-    background: var(--pink-light);
-    border-radius: 50% 42% 50% 45%;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(16, 13, 16, .08)
-  }
-
-  .about-circle {
-    position: absolute;
-    width: 220px;
-    height: 220px;
-    background: var(--pink-deep);
-    border-radius: 50%;
-    top: 62px;
-    left: 100px
-  }
-
-  .about-cake {
-    font-size: 9rem;
-    position: absolute;
-    top: 115px;
-    left: 132px;
-    transform: rotate(-7deg)
-  }
-
-  .about-heart {
-    position: absolute;
-    right: 75px;
-    top: 55px;
-    color: var(--ink);
-    font-size: 4rem
-  }
-
-  .about-copy>p:not(.eyebrow) {
-    color: var(--muted);
-    font-size: 1.1rem
-  }
-
-  .about-copy .button {
-    display: inline-block;
-    margin-top: 18px
-  }
-
-  .centered {
-    display: block;
-    text-align: center
-  }
-
-  .centered>p:last-child {
-    margin: 15px auto 0
-  }
-
-  .occasion-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    text-align: center
-  }
-
-  .occasion-grid>div {
-    padding: 26px 15px;
-    border: 2px dashed rgba(16, 13, 16, .38);
-    border-radius: 22px;
-    background: #fffafa
-  }
-
-  .occasion-grid span {
-    font-size: 2.4rem
-  }
-
-  .occasion-grid h3 {
-    margin: 8px 0 3px;
-    font-size: 1.3rem
-  }
-
-  .occasion-grid p {
-    margin: 0;
-    color: var(--muted)
-  }
-
-  .order {
-    background: var(--pink);
-    color: var(--ink);
-    padding: 85px max(28px, calc((100% - 1180px)/2));
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 75px;
-    align-items: start
-  }
-
-  .order h2 em {
-    color: var(--ink)
-  }
-
-  .order-copy>p:not(.eyebrow) {
-    font-size: 1.1rem;
-    max-width: 470px
-  }
-
-  .contact-links {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin-top: 25px
-  }
-
-  .contact-links a,
-  .contact-links span {
-    color: var(--ink);
-    text-decoration: none;
-    font-weight: 700
-  }
-
-  .order-form {
-    background: #fff;
-    color: var(--ink);
-    padding: 28px;
-    border-radius: var(--radius);
-    display: grid;
-    gap: 14px;
-    box-shadow: 0 15px 40px rgba(16, 13, 16, .16)
-  }
-
-  label {
-    font-weight: 700;
-    display: grid;
-    gap: 5px
-  }
-
-  input,
-  select,
-  textarea {
-    font: inherit;
-    border: 1px solid rgba(16, 13, 16, .17);
-    border-radius: 12px;
-    padding: 12px 14px;
-    color: var(--ink);
-    background: #fff
-  }
-
-  textarea {
-    resize: vertical
-  }
-
-  .form-message {
-    margin: 0;
-    color: var(--ink);
-    font-weight: 700
-  }
-
-  footer {
-    padding: 32px 28px;
-    text-align: center;
-    background: var(--ink);
-    color: #fff
-  }
-
-  .footer-brand {
-    justify-content: center
-  }
-
-  .footer-brand .logo-image {
-    width: 150px;
-    height: 76px;
-    filter: invert(1) grayscale(1) contrast(2);
-    mix-blend-mode: screen
-  }
-
-  .copyright {
-    color: #d5ccd0;
-    font-size: .85rem;
-    margin-bottom: 0
-  }
-
-  @media(max-width:760px) {
-    .site-header {
-      padding: 12px 20px
-    }
-
-    .logo-image {
-      width: 145px;
-      height: 68px
-    }
-
-    .menu-toggle {
-      display: block
-    }
-
-    .nav {
-      display: none;
-      position: absolute;
-      top: 92px;
-      left: 15px;
-      right: 15px;
-      flex-direction: column;
-      background: #fff;
-      padding: 22px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, .15)
-    }
-
-    .nav.open {
-      display: flex
-    }
-
-    .hero {
-      grid-template-columns: 1fr;
-      padding-top: 35px
-    }
-
-    .hero-art {
-      height: 330px;
-      justify-self: center
-    }
-
-    .cake-main {
-      left: 25%;
-      top: 90px
-    }
-
-    .cupcake {
-      right: 25px;
-      bottom: 55px
-    }
-
-    .cookie {
-      left: 30px;
-      bottom: 45px
-    }
-
-    .section-heading,
-    .about,
-    .order {
-      display: block
-    }
-
-    .section-heading>p {
-      margin-top: 20px
-    }
-
-    .product-grid,
-    .occasion-grid {
-      grid-template-columns: 1fr
-    }
-
-    .product-card {
-      min-height: 290px
-    }
-
-    .about-art {
-      height: 300px;
-      margin-bottom: 45px
-    }
-
-    .about-circle {
-      left: 25%
-    }
-
-    .about-cake {
-      left: 31%;
-      top: 85px;
-      font-size: 7rem
-    }
-
-    .order-form {
-      margin-top: 35px
-    }
-
-    .hero-actions {
-      flex-wrap: wrap
-    }
-
-    .ticker {
-      gap: 10px;
-      font-size: .9rem
-    }
-
+  @media (max-width: 600px) {
     .menu-link-section {
-      padding: 0 20px 65px
+      padding: 0 20px 65px;
     }
   }
-</style>
-
-
+  </style>
 </head>
 <body>
   <div class="announcement">Encomendas artesanais para deixar seu momento ainda mais doce ♡</div>
   <header class="site-header" id="inicio">
-    <a class="brand" href="#inicio" aria-label="Lili Doces Gourmet - início"><img class="logo-image" src="logo-lili-doces.jpg" alt="Lili Jordão Doces Gourmet"></a>
+    <a class="brand" href="#inicio" aria-label="Lili Doces - início"><span class="brand-mark" aria-hidden="true"><span>♡</span></span><span class="brand-name">Lili <strong>Doces</strong></span></a>
     <button class="menu-toggle" aria-label="Abrir menu">☰</button>
-    <nav class="nav" aria-label="Navegação principal"><a href="#doces">Nossos doces</a><a href="#sobre">A Lili</a><a href="#ocasioes">Ocasiões</a><a href="#contato">Contato</a><a href="https://lilidoces.github.io/cardapio/" class="nav-cta" target="_blank" rel="noopener noreferrer">Cardápio</a></nav>
+    <nav class="nav" aria-label="Navegação principal"><a href="#doces">Nossos doces</a><a href="#sobre">A Lili</a><a href="#ocasioes">Ocasiões</a><a href="#contato">Contato</a>
+    <a
+    href="https://lilidoces.github.io/cardapio/"
+    class="nav-cta"
+    target="_blank"
+    rel="noopener noreferrer">
+    Cardápio
+  </a>
+</nav>
   </header>
   <main>
     <section class="hero">
-      <div class="hero-copy"><p class="eyebrow">Doceria artesanal</p><h1>Um pedacinho de<br><em>felicidade</em> em cada doce.</h1><p class="hero-text">Bolos, cupcakes, chocolates e doces feitos à mão para celebrar a vida com carinho, sabor e momentos especiais.</p><div class="hero-actions"><a class="button button-primary" href="#contato">Faça sua encomenda <span>→</span></a><a class="button button-link" href="https://lilidoces.github.io/cardapio/" target="_blank" rel="noopener noreferrer">Conheça o cardápio</a></div><div class="mini-note"><span>✦</span> Tudo feito com carinho, doce.</div></div>
+      <div class="hero-copy"><p class="eyebrow">Doceria artesanal</p><h1>Um pedacinho de<br><em>felicidade</em> em cada doce.</h1><p class="hero-text">Bolos, cupcakes, chocolates e doces feitos à mão para celebrar a vida com carinho, cor e muito sabor.</p><div class="hero-actions"><a class="button button-primary" href="#contato">Faça sua encomenda <span>→</span></a><a class="button button-link" href="#doces">Conheça o cardápio</a></div><div class="mini-note"><span>✦</span> Tudo feito com carinho, doce.</div></div>
       <div class="hero-art" aria-label="Ilustração decorativa de bolo e doces"><div class="sun"></div><div class="sparkle sparkle-one">✦</div><div class="sparkle sparkle-two">♡</div><div class="cake cake-main"><div class="cake-top">🍓</div><div class="icing"></div><div class="cake-lines"></div></div><div class="cupcake">🧁</div><div class="cookie">●</div><div class="confetti">• · ˚ · •<br>˚ · • · ˚</div></div>
     </section>
     <section class="ticker" aria-label="Especialidades"><span>Bolos</span><i>♡</i><span>Docinhos</span><i>♡</i><span>Cupcakes</span><i>♡</i><span>Chocolates</span><i>♡</i><span>Momentos felizes</span></section>
-    <section class="section products" id="doces"><div class="section-heading"><div><p class="eyebrow">Escolha seu favorito</p><h2>Feitos para adoçar<br><em>seu dia.</em></h2></div><p>Receitas especiais, ingredientes selecionados e aquele toque artesanal que faz toda diferença.</p></div><div class="product-grid"><article class="product-card pink-card"><div class="product-illustration">🍰</div><h3>Bolos artesanais</h3><p>Camadas fofinhas, recheios cremosos e decoração feita especialmente para você.</p><a href="#contato">Encomendar →</a></article><article class="product-card blue-card"><div class="product-illustration">🧁</div><h3>Cupcakes &amp; doces</h3><p>Pequenas delícias para festas, presentes e todos os dias que merecem carinho.</p><a href="#contato">Encomendar →</a></article><article class="product-card yellow-card"><div class="product-illustration">🍫</div><h3>Chocolates</h3><p>Bombons e mimos personalizados para surpreender quem você ama.</p><a href="#contato">Encomendar →</a></article></div></section>
-    <section class="menu-link-section" aria-label="Cardápio online"><p class="eyebrow">Escolha seu favorito</p><h2>Veja todas as nossas <em>delícias.</em></h2><p>Confira o cardápio completo da Lili Doces e faça seu pedido pelo WhatsApp.</p><a class="menu-link-button" href="https://lilidoces.github.io/cardapio/" target="_blank" rel="noopener noreferrer">Ver cardápio completo <span>→</span></a></section>
+    <section class="section products" id="doces"><div class="section-heading"><div><p class="eyebrow">Escolha seu favorito</p><h2>Feitos para adoçar<br><em>seu dia.</em></h2></div><p>Receitas especiais, ingredientes selecionados e aquele toque artesanal que faz toda diferença.</p></div><div class="product-grid"><article class="product-card pink-card"><div class="product-illustration">🍰</div><h3>Bolos artesanais</h3><p>Camadas fofinhas, recheios cremosos e decoração feita especialmente para você.</p><a href="#contato">Encomendar →</a></article><article class="product-card blue-card"><div class="product-illustration">🧁</div><h3>Cupcakes & doces</h3><p>Pequenas delícias para festas, presentes e todos os dias que merecem carinho.</p><a href="#contato">Encomendar →</a></article><article class="product-card yellow-card"><div class="product-illustration">🍫</div><h3>Chocolates</h3><p>Bombons e mimos personalizados para surpreender quem você ama.</p><a href="#contato">Encomendar →</a></article></div></section>
+    <section class="menu-link-section" aria-label="Cardápio online">
+  <p class="eyebrow">Escolha seu favorito</p>
+  <h2>Veja todas as nossas <em>delícias.</em></h2>
+  <p>Confira o cardápio completo da Lili Doces e faça seu pedido pelo WhatsApp.</p>
+  <a class="menu-link-button" href="https://lilidoces.github.io/cardapio/" target="_blank" rel="noopener noreferrer">
+    Ver cardápio completo <span>→</span>
+  </a>
+</section>
     <section class="about" id="sobre"><div class="about-art"><div class="about-circle"></div><div class="about-cake">🍓</div><span class="about-heart">♡</span></div><div class="about-copy"><p class="eyebrow">Um doce encontro</p><h2>Olá, eu sou a <em>Lili!</em></h2><p>A Lili Doces nasceu do amor por transformar ingredientes simples em momentos inesquecíveis. Cada receita é preparada em pequenos lotes, com cuidado em cada detalhe e muito afeto.</p><p>Porque para a gente, doce bom é aquele que faz os olhos brilharem antes mesmo da primeira mordida.</p><a class="button button-primary" href="#contato">Vamos conversar <span>→</span></a></div></section>
     <section class="occasions section" id="ocasioes"><div class="section-heading centered"><p class="eyebrow">Para todos os momentos</p><h2>Qual é a sua <em>ocasião?</em></h2><p>Conte com a Lili para deixar cada celebração com o seu jeitinho.</p></div><div class="occasion-grid"><div><span>🎂</span><h3>Aniversários</h3><p>Bolos que são a estrela da festa.</p></div><div><span>💝</span><h3>Presentes</h3><p>Um carinho em forma de doce.</p></div><div><span>👰🏻🤵🏻‍♂️</span><h3>Casamentos</h3><p>Detalhes doces para o grande dia.</p></div><div><span>☕</span><h3>Dia a dia</h3><p>Porque todo dia merece um mimo.</p></div></div></section>
-    <section class="order" id="contato"><div class="order-copy"><p class="eyebrow">Vamos criar algo delicioso?</p><h2>Seu próximo momento feliz começa <em>aqui.</em></h2><p>Envie uma mensagem e conte o que você está imaginando. A gente prepara tudo com muito carinho.</p><div class="contact-links"><a href="https://wa.me/5511989360383" target="_blank" rel="noopener">WhatsApp: (11) 98936-0383</a><a href="mailto:oi@lilidoces.com.br">oi@lilidoces.com.br</a><span>São Paulo • SP</span></div></div><form class="order-form" id="orderForm"><label>Seu nome<input type="text" name="nome" required placeholder="Como podemos chamar você?"></label><label>O que você gostaria de encomendar?<select name="produto" required><option value="">Selecione uma opção</option><option>Bolo artesanal</option><option>Cupcakes e doces</option><option>Chocolates</option><option>Pedido personalizado</option></select></label><label>Conte um pouquinho<textarea name="mensagem" rows="4" placeholder="Data, quantidade, sabores..."></textarea></label><button class="button button-dark" type="submit">Enviar pelo WhatsApp <span>→</span></button><p class="form-message" role="status"></p></form></section>
+    <section class="order" id="contato"><div class="order-copy"><p class="eyebrow">Vamos criar algo delicioso?</p><h2>Seu próximo momento feliz começa <em>aqui.</em></h2><p>Envie uma mensagem e conte o que você está imaginando. A gente prepara tudo com muito carinho.</p><div class="contact-links"><a href="https://wa.me/5511989360383" target="_blank" rel="noopener">WhatsApp: (11) 98936-0383</a><a href="mailto:oi@lilidoces.com.br">oi@lilidoces.com.br</a><span>Londrina • Paraná</span></div></div><form class="order-form" id="orderForm"><label>Seu nome<input type="text" name="nome" required placeholder="Como podemos chamar você?"></label><label>O que você gostaria de encomendar?<select name="produto" required><option value="">Selecione uma opção</option><option>Bolo artesanal</option><option>Cupcakes e doces</option><option>Chocolates</option><option>Pedido personalizado</option></select></label><label>Conte um pouquinho<textarea name="mensagem" rows="4" placeholder="Data, quantidade, sabores..."></textarea></label><button class="button button-dark" type="submit">Enviar pelo WhatsApp <span>→</span></button><p class="form-message" role="status"></p></form></section>
   </main>
-  <footer><a class="brand footer-brand" href="#inicio"><img class="logo-image" src="logo-lili-doces.jpg" alt="Lili Jordão Doces Gourmet"></a><p>Feito com carinho, doce. ♡</p><p class="copyright">© 2026 Lili Doces Gourmet. Todos os direitos reservados.</p></footer>
+  <footer><a class="brand footer-brand" href="#inicio"><span class="brand-mark"><span>♡</span></span><span class="brand-name">Lili <strong>Doces</strong></span></a><p>Feito com carinho, doce. ♡</p><p class="copyright">© 2026 Lili Doces. Todos os direitos reservados.</p></footer>
   <script>
     const menuToggle=document.querySelector('.menu-toggle');
     const nav=document.querySelector('.nav');
